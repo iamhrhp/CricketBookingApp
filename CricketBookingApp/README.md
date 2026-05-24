@@ -1,10 +1,10 @@
 # Cricket Turf Booking (Agentic AI)
 
-A cricket turf booking application where users can discover clubs, book turf slots, create cricket activities, and use AI assistance for planning matches and bookings.
+A cricket turf booking app to discover clubs, book slots, create activities, and get AI booking assistance.
 
 ---
 
-# Main Tabs
+# Tabs
 
 * Home
 * Booking
@@ -14,242 +14,91 @@ A cricket turf booking application where users can discover clubs, book turf slo
 
 ---
 
-# Login Flow
+# Flow
 
-1. Splash Screen
-2. Login / Signup
-3. Google Login
-4. Home Screen
+Splash → Login → Home → Club → Booking → Payment → Confirmation
 
 ---
 
-# Home Flow
+# Home
 
-## Home Screen
-
-Shows list of cricket clubs.
+* Club List
+* Search Clubs
+* Nearby Clubs
+* Create Activity (+)
 
 ### Club Card
 
-* Club Image
-* Club Name
-* Open Time - Close Time
+* Image
+* Name
+* Timing
 * Location
-* Cricket Type
-
-### Features
-
-* Search Clubs
-* Filter Clubs
-* Nearby Clubs
-* Create Activity Button (+)
 
 ---
 
-# Create Activity Flow
+# Create Activity
 
-1. Enter Activity Name
-2. Select Player Size (4 - 24)
-3. Select Club
-4. Add Comment
-5. Create Activity
-
-### Activity Features
-
-* Public / Private Activity
-* Join Activity
-* Invite Players
+* Activity Name
+* Player Size
+* Select Club
+* Comment
 
 ---
 
-# Club Flow
+# Club Details
 
-1. Club List
-2. Club Details
-
-## Club Details
-
-* Club Name
-* Images
-* Location
-* Cricket Type
-* Open Timing
-* Facilities
-
-### Club Detail Tabs
+### Tabs
 
 * Info
 * Booking
 * Activities
 
----
+### Details
 
-# Booking Flow
-
-1. Select Time Slot
-2. Select Duration
-3. Select Amount
-4. Checkout Screen
-5. Payment Screen
-6. Booking Confirmation
+* Images
+* Timing
+* Facilities
 
 ---
 
-# Time Slot Screen
+# Booking
 
-Shows:
+Slot → Duration → Amount → Checkout → Payment
 
-* Available Slots
-* Booked Slots
-* Duration
-* Price
-
----
-
-# Amount Screen
-
-Shows booking plans:
-
-* 1 Hour
-* 2 Hour
-* Full Match
-
----
-
-# Checkout Screen
-
-Shows:
-
-* Club Name
-* Slot Time
-* Duration
-* Player Size
-* Total Amount
-
----
-
-# Payment Screen
-
-Shows:
-
-* Amount
-* Payment Method
-
-### Payment Methods
+### Payment
 
 * UPI
-* Pay lat at clkuber
+* Pay Later at Club
 
 ---
 
-# Booking Confirmation
-
-Shows:
-
-* Booking ID
-* Booking Details
-* Payment Success
-
----
-
-# Activities Flow
-
-Shows all activities created inside clubs.
-
-### Activity Card
+# Activities
 
 * Activity Name
 * Date & Time
 * Player Count
-* Club Name
-* Join Button
+* Join Activity
 
 ---
 
-# AI Flow
-
-## AI Chat Screen
-
-Users can chat with AI.
-
-### AI Features
+# AI
 
 * Create Activity
 * Suggest Clubs
-* Suggest Time Slots
-* Help in Booking
-* Smart Recommendations
-
-### Example
-
-* “Create a match for 10 players tomorrow evening.”
-* “Find nearby turfs after 7 PM.”
+* Suggest Slots
+* Booking Help
 
 ---
 
-# Notifications Flow
+# Notifications
 
-### Notifications
-
-* Booking Confirmation
-* Booking Reminder
-* Activity Invite
-* Payment Updates
+* Booking Updates
+* Activity Invites
 
 ---
 
-# Profile Flow
-
-## Profile Screen
+# Profile
 
 * User Details
-* Edit Profile
-* Activity past History
+* Activity History
 * Logout
-
-
----
-
-# App Flow Summary
-
-```text
-Splash
-  ↓
-Login
-  ↓
-Home
-  ↓
-Club Details
-  ↓
-Booking
-  ↓
-Checkout
-  ↓
-Payment
-  ↓
-Confirmation
-```
-
----
-
-# AI Flow Summary
-
-```text
-AI Chat
-  ↓
-User Prompt
-  ↓
-AI Suggestion
-  ↓
-Activity Creation
-```
-
----
-
-# Notes
-
-* Simple and fast booking experience
-* AI assisted activity creation
-* Modern sports booking application
-* Designed for cricket turf communities
-
