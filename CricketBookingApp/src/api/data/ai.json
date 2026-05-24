@@ -1,0 +1,81 @@
+{
+  "actions": [
+    {
+      "id": "1",
+      "title": "Create Activity",
+      "description": "Set up a gully match, nets session, or corporate game.",
+      "icon": "add-circle-outline"
+    },
+    {
+      "id": "2",
+      "title": "Suggest Clubs",
+      "description": "Find turfs in Raipur, Bilaspur, Durg and nearby cities.",
+      "icon": "location-outline"
+    },
+    {
+      "id": "3",
+      "title": "Suggest Slots",
+      "description": "Get evening slots under flood lights this weekend.",
+      "icon": "time-outline"
+    },
+    {
+      "id": "4",
+      "title": "Booking Help",
+      "description": "Ask about UPI payment, pay-at-club, or cancellations.",
+      "icon": "chatbubble-ellipses-outline"
+    }
+  ],
+  "suggestions": [
+    {
+      "id": "s1",
+      "message": "Namaste! Try MSD Cricket Turf in Raipur — ₹1200/hr, rated 4.5★ for box cricket."
+    },
+    {
+      "id": "s2",
+      "message": "Evening slots at Virat Sports Turf, Durg are popular on weekends. Want me to check availability?"
+    },
+    {
+      "id": "s3",
+      "message": "Join Rahul Sharma's Sunday Gully T20 — 3 spots left at MSD Cricket Turf."
+    }
+  ],
+  "promotions": [
+    {
+      "id": "p1",
+      "clubId": "1",
+      "name": "MSD Cricket Turf",
+      "image": "https://images.unsplash.com/photo-1540747913346-19e32dc3e97e",
+      "location": "Raipur",
+      "tagline": "Weekend offer — Book 2 hrs, get 30 min free under flood lights.",
+      "rating": 4.5,
+      "pricePerHour": 1200,
+      "cricketType": "Box Cricket"
+    },
+    {
+      "id": "p2",
+      "clubId": "3",
+      "name": "Virat Sports Turf",
+      "image": "https://images.unsplash.com/photo-1431324155629-1a6deb1dec8d",
+      "location": "Durg",
+      "tagline": "Evening slots open this weekend — rated 4.8★ for box cricket.",
+      "rating": 4.8,
+      "pricePerHour": 1500,
+      "cricketType": "Box Cricket"
+    },
+    {
+      "id": "p3",
+      "clubId": "10",
+      "name": "Western Warriors Arena",
+      "image": "https://images.unsplash.com/photo-1612872087720-bb876e2e67d1",
+      "location": "Mumbai",
+      "tagline": "New turf launch — flat 15% off on your first booking.",
+      "rating": 4.9,
+      "pricePerHour": 1800,
+      "cricketType": "Turf Cricket"
+    }
+  ],
+  "paymentMethods": [
+    { "id": "UPI", "label": "UPI", "icon": "phone-portrait-outline" },
+    { "id": "Pay Later at Club", "label": "Pay Later at Club", "icon": "business-outline" }
+  ]
+}

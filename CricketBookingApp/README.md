@@ -102,3 +102,98 @@ Slot → Duration → Amount → Checkout → Payment
 * User Details
 * Activity History
 * Logout
+
+
+APP FLOW STRUCTURE
+
+Cricket Turf Booking (Agentic AI)
+│
+├── Splash Screen
+│     └── Check Auth State
+│
+├── Authentication
+│     ├── Login
+│     ├── Signup
+│     └── Google Login
+│
+├── Main App (Bottom Tabs)
+│
+│
+├── HOME TAB
+│     │
+│     ├── Home Screen
+│     │     ├── Club List
+│     │     ├── Search Clubs
+│     │     ├── Nearby Clubs
+│     │     └── Create Activity (+)
+│     │
+│     ├── Club Details
+│     │     ├── Images
+│     │     ├── Timing
+│     │     ├── Facilities
+│     │     └── Tabs
+│     │           ├── Info
+│     │           ├── Booking
+│     │           └── Activities
+│     │
+│     └── Create Activity
+│           ├── Activity Name
+│           ├── Player Size
+│           ├── Select Club
+│           ├── Comment
+│           └── Create Activity
+│
+│
+├── BOOKING TAB
+│     │
+│     ├── Slot Selection
+│     │
+│     ├── Duration Selection
+│     │
+│     ├── Amount Selection
+│     │
+│     ├── Checkout Screen
+│     │     ├── Club Name
+│     │     ├── Slot Time
+│     │     ├── Duration
+│     │     ├── Player Size
+│     │     └── Amount
+│     │
+│     ├── Payment Screen
+│     │     ├── UPI
+│     │     ├── Card
+│     │     ├── Wallet
+│     │     └── Pay Later at Club
+│     │
+│     └── Booking Confirmation
+│           ├── Booking ID
+│           ├── Payment Success
+│           └── Booking Details
+│
+│
+├── AI TAB
+│     │
+│     └── AI Chat Screen
+│           ├── Create Activity
+│           ├── Suggest Clubs
+│           ├── Suggest Slots
+│           ├── Booking Help
+│           └── Smart Recommendations
+│
+│
+├── NOTIFICATIONS TAB
+│     │
+│     ├── Booking Updates
+│     ├── Booking Reminder
+│     ├── Activity Invite
+│     └── Payment Updates
+│
+│
+└── PROFILE TAB
+      │
+      ├── User Details
+      ├── Edit Profile
+      ├── Booking History
+      ├── Activity History
+      ├── Saved Clubs
+      └── Logout
