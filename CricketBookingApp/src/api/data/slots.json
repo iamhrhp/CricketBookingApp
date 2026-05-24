@@ -1,0 +1,24 @@
+{
+  "dateOptions": [
+    { "id": "1", "day": "FRI", "date": 1, "month": "May" },
+    { "id": "2", "day": "SAT", "date": 2, "month": "May" },
+    { "id": "3", "day": "SUN", "date": 3, "month": "May" },
+    { "id": "4", "day": "MON", "date": 4, "month": "May" },
+    { "id": "5", "day": "TUE", "date": 5, "month": "May" },
+    { "id": "6", "day": "WED", "date": 6, "month": "May" },
+    { "id": "7", "day": "THU", "date": 7, "month": "May" }
+  ],
+  "timeSlots": [
+    "6:00", "7:00", "8:00", "9:00", "10:00", "11:00", "12:00",
+    "13:00", "14:00", "15:00", "16:00", "17:00", "18:00",
+    "19:00", "20:00", "21:00", "22:00"
+  ],
+  "defaultUnavailableSlots": ["9:00", "13:00", "21:00"],
+  "clubSlots": [
+    { "clubId": "1", "unavailableSlots": ["9:00", "13:00", "21:00"] },
+    { "clubId": "2", "unavailableSlots": ["8:00", "12:00", "20:00"] },
+    { "clubId": "3", "unavailableSlots": ["7:00", "14:00", "22:00"] },
+    { "clubId": "4", "unavailableSlots": ["10:00", "15:00", "19:00"] },
+    { "clubId": "5", "unavailableSlots": ["9:00", "13:00", "18:00"] }
+  ]
+}

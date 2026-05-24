@@ -1,0 +1,46 @@
+[
+  {
+    "id": "b1",
+    "clubId": "1",
+    "clubName": "MSD Cricket Turf",
+    "slot": "8:00",
+    "duration": 60,
+    "amount": 1200,
+    "date": "Fri, 01 May",
+    "status": "upcoming",
+    "paymentMethod": "UPI"
+  },
+  {
+    "id": "b2",
+    "clubId": "2",
+    "clubName": "Gully Premier Arena",
+    "slot": "18:00",
+    "duration": 90,
+    "amount": 1500,
+    "date": "Mon, 28 Apr",
+    "status": "completed",
+    "paymentMethod": "Pay Later at Club"
+  },
+  {
+    "id": "b3",
+    "clubId": "3",
+    "clubName": "Virat Sports Turf",
+    "slot": "6:00",
+    "duration": 120,
+    "amount": 3000,
+    "date": "Sat, 12 Apr",
+    "status": "completed",
+    "paymentMethod": "UPI"
+  },
+  {
+    "id": "b4",
+    "clubId": "4",
+    "clubName": "Hitman Turf Ground",
+    "slot": "20:00",
+    "duration": 60,
+    "amount": 1300,
+    "date": "Wed, 07 May",
+    "status": "upcoming",
+    "paymentMethod": "UPI"
+  }
+]

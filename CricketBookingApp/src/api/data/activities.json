@@ -1,0 +1,142 @@
+[
+  {
+    "id": "a1",
+    "clubId": "1",
+    "clubName": "MSD Cricket Turf",
+    "name": "Sunday Gully T20",
+    "hostName": "Rahul Sharma",
+    "dateTime": "Sun, 25 May · 7:00 AM",
+    "slot": "7:00 AM",
+    "duration": 120,
+    "amount": 2400,
+    "status": "upcoming",
+    "playerCount": 8,
+    "maxPlayers": 11,
+    "players": [
+      "Rahul Sharma",
+      "Priya Verma",
+      "Amit Patel",
+      "Kavya Reddy",
+      "Vikram Singh",
+      "Ananya Iyer",
+      "Arjun Mehta",
+      "Suresh Kumar"
+    ],
+    "comment": "Friendly match near Telibandha. All skill levels welcome."
+  },
+  {
+    "id": "a2",
+    "clubId": "1",
+    "clubName": "MSD Cricket Turf",
+    "name": "Raipur Night League",
+    "hostName": "Priya Verma",
+    "dateTime": "Fri, 30 May · 8:00 PM",
+    "slot": "8:00 PM",
+    "duration": 90,
+    "amount": 1800,
+    "status": "upcoming",
+    "playerCount": 6,
+    "maxPlayers": 8,
+    "players": [
+      "Priya Verma",
+      "Rahul Sharma",
+      "Amit Patel",
+      "Kavya Reddy",
+      "Vikram Singh",
+      "Ananya Iyer"
+    ],
+    "comment": "Box cricket under flood lights. Bring white ball."
+  },
+  {
+    "id": "a3",
+    "clubId": "2",
+    "clubName": "Gully Premier Arena",
+    "name": "Bilaspur Corporate Cup",
+    "hostName": "Amit Patel",
+    "dateTime": "Sat, 24 May · 4:00 PM",
+    "slot": "4:00 PM",
+    "duration": 120,
+    "amount": 2000,
+    "status": "in_progress",
+    "playerCount": 10,
+    "maxPlayers": 12,
+    "players": [
+      "Amit Patel",
+      "Rahul Sharma",
+      "Priya Verma",
+      "Kavya Reddy",
+      "Vikram Singh",
+      "Ananya Iyer",
+      "Arjun Mehta",
+      "Suresh Kumar",
+      "Deepak Gupta",
+      "Neha Joshi"
+    ]
+  },
+  {
+    "id": "a4",
+    "clubId": "3",
+    "clubName": "Virat Sports Turf",
+    "name": "Durg Morning Nets",
+    "hostName": "Kavya Reddy",
+    "dateTime": "Mon, 26 May · 6:30 AM",
+    "slot": "6:30 AM",
+    "duration": 60,
+    "amount": 1500,
+    "status": "completed",
+    "playerCount": 4,
+    "maxPlayers": 6,
+    "players": [
+      "Kavya Reddy",
+      "Rahul Sharma",
+      "Amit Patel",
+      "Arjun Mehta"
+    ],
+    "comment": "Nets session before office hours."
+  },
+  {
+    "id": "a5",
+    "clubId": "4",
+    "clubName": "Hitman Turf Ground",
+    "name": "Nagpur Weekend Sixes",
+    "hostName": "Vikram Singh",
+    "dateTime": "Sun, 01 Jun · 5:30 PM",
+    "slot": "5:30 PM",
+    "duration": 90,
+    "amount": 1950,
+    "status": "upcoming",
+    "playerCount": 7,
+    "maxPlayers": 10,
+    "players": [
+      "Vikram Singh",
+      "Priya Verma",
+      "Amit Patel",
+      "Kavya Reddy",
+      "Ananya Iyer",
+      "Arjun Mehta",
+      "Suresh Kumar"
+    ],
+    "comment": "Six-a-side tournament warm-up game."
+  },
+  {
+    "id": "a6",
+    "clubId": "5",
+    "clubName": "Chennai Super Turf",
+    "name": "Chennai Super Over Bash",
+    "hostName": "Ananya Iyer",
+    "dateTime": "Sat, 31 May · 9:00 PM",
+    "slot": "9:00 PM",
+    "duration": 60,
+    "amount": 1400,
+    "status": "completed",
+    "playerCount": 5,
+    "maxPlayers": 8,
+    "players": [
+      "Ananya Iyer",
+      "Rahul Sharma",
+      "Priya Verma",
+      "Amit Patel",
+      "Arjun Mehta"
+    ]
+  }
+]

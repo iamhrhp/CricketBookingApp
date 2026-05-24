@@ -1,0 +1,47 @@
+[
+  {
+    "id": "n1",
+    "type": "booking",
+    "title": "Booking Confirmed",
+    "message": "Your slot at MSD Cricket Turf on Fri 01 May at 8:00 AM is confirmed.",
+    "senderName": "Cricket Turf Booking",
+    "time": "2h ago",
+    "read": false
+  },
+  {
+    "id": "n2",
+    "type": "activity",
+    "title": "Activity Invite",
+    "message": "Rahul Sharma invited you to join Sunday Gully T20 at MSD Cricket Turf.",
+    "senderName": "Rahul Sharma",
+    "time": "5h ago",
+    "read": false
+  },
+  {
+    "id": "n3",
+    "type": "booking",
+    "title": "Booking Reminder",
+    "message": "Your booking at Gully Premier Arena starts in 24 hours.",
+    "senderName": "Cricket Turf Booking",
+    "time": "1d ago",
+    "read": true
+  },
+  {
+    "id": "n4",
+    "type": "activity",
+    "title": "New Player Joined",
+    "message": "Priya Verma joined your Raipur Night League activity.",
+    "senderName": "Priya Verma",
+    "time": "2d ago",
+    "read": true
+  },
+  {
+    "id": "n5",
+    "type": "booking",
+    "title": "Payment Received",
+    "message": "₹1500 received for Gully Premier Arena booking via UPI.",
+    "senderName": "Cricket Turf Booking",
+    "time": "3d ago",
+    "read": true
+  }
+]
