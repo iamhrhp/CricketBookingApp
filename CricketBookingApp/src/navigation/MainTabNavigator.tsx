@@ -2,10 +2,10 @@ import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { getFocusedRouteNameFromRoute } from '@react-navigation/native';
 import Icon from 'react-native-vector-icons/Ionicons';
 
-import AIScreen from '../screens/AIScreen';
 import NotificationsScreen from '../screens/NotificationsScreen';
 import ProfileScreen from '../screens/ProfileScreen';
 import { colors } from '../theme/colors';
+import AIStackNavigator from './AIStackNavigator';
 import BookingStackNavigator from './BookingStackNavigator';
 import HomeStackNavigator from './HomeStackNavigator';
 import { MainTabParamList } from './types';
@@ -19,6 +19,7 @@ const HIDDEN_TAB_ROUTES = [
   'AllClubs',
   'ActivityDetails',
   'BookingDetails',
+  'AICreateActivity',
   'Checkout',
   'Payment',
   'Confirmation',
@@ -59,7 +60,7 @@ export default function MainTabNavigator() {
     >
       <Tab.Screen name="HomeTab" component={HomeStackNavigator} options={{ title: 'Home' }} />
       <Tab.Screen name="BookingTab" component={BookingStackNavigator} options={{ title: 'Booking' }} />
-      <Tab.Screen name="AITab" component={AIScreen} options={{ title: 'AI' }} />
+      <Tab.Screen name="AITab" component={AIStackNavigator} options={{ title: 'AI' }} />
       <Tab.Screen
         name="NotificationsTab"
         component={NotificationsScreen}

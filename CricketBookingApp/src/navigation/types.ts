@@ -26,10 +26,15 @@ export type HomeStackParamList = {
   Confirmation: BookingFlowParams & { paymentMethod: string };
 };
 
+export type AIStackParamList = {
+  AIHome: undefined;
+  AICreateActivity: undefined;
+};
+
 export type MainTabParamList = {
   HomeTab: NavigatorScreenParams<HomeStackParamList>;
   BookingTab: NavigatorScreenParams<BookingStackParamList>;
-  AITab: undefined;
+  AITab: NavigatorScreenParams<AIStackParamList>;
   NotificationsTab: undefined;
   ProfileTab: undefined;
 };

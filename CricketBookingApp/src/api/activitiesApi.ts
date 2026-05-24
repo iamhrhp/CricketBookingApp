@@ -34,6 +34,8 @@ export async function createActivity(input: CreateActivityInput): Promise<Activi
   const duration = 90;
   const hostName = input.hostName ?? CURRENT_USER;
   const amount = club ? Math.round((duration / 60) * club.pricePerHour) : 1200;
+  const dateLabel = input.date ?? 'Sat, 07 Jun';
+  const timeLabel = input.time ?? '6:00 PM';
 
   const activity: Activity = {
     id: createId('a'),
@@ -41,8 +43,8 @@ export async function createActivity(input: CreateActivityInput): Promise<Activi
     clubName: input.clubName ?? club?.name ?? 'Cricket Turf',
     name: input.name,
     hostName,
-    dateTime: 'Sat, 07 Jun · 6:00 PM',
-    slot: '6:00 PM',
+    dateTime: `${dateLabel} · ${timeLabel}`,
+    slot: timeLabel,
     duration,
     amount,
     status: 'upcoming',

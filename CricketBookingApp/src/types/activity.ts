@@ -24,4 +24,6 @@ export interface CreateActivityInput {
   comment?: string;
   hostName?: string;
   clubName?: string;
+  date?: string;
+  time?: string;
 }
