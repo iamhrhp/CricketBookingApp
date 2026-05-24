@@ -4,6 +4,27 @@ A cricket turf booking app to discover clubs, book slots, create activities, and
 
 ---
 
+# Install & Run
+
+```bash
+npm install
+npm run ios      # or: npm run android
+npm start        # Metro bundler (separate terminal)
+```
+
+**Firebase setup (first time):**
+
+```bash
+cp src/config/firebase.example.ts src/config/firebase.local.ts
+cp android/app/google-services.json.example android/app/google-services.json
+cp ios/CricketBookingAppCLI/GoogleService-Info.plist.example ios/CricketBookingAppCLI/GoogleService-Info.plist
+```
+
+Add your Firebase / Google Sign-In values in those files, then run `npm run setup-secrets`.  
+See [SECRETS.md](./SECRETS.md) for details.
+
+---
+
 # Tabs
 
 * Home
@@ -16,15 +37,15 @@ A cricket turf booking app to discover clubs, book slots, create activities, and
 
 # Flow
 
-Splash → Login → Home → Club → Booking → Payment → Confirmation
+Splash → Login (Google) → Home → Club → Booking → Payment → Confirmation
 
 ---
 
 # Home
 
-* Club List
 * Search Clubs
-* Nearby Clubs
+* Nearby Clubs (max 5)
+* All Clubs (max 5 + See All)
 * Create Activity (+)
 
 ### Club Card
@@ -63,7 +84,11 @@ Splash → Login → Home → Club → Booking → Payment → Confirmation
 
 # Booking
 
-Slot → Duration → Amount → Checkout → Payment
+Booking tab shows your booking list → tap for Booking Details.
+
+New booking flow (from Club Details → Booking tab):
+
+Slot → Duration → Amount → Checkout → Payment → Confirmation
 
 ### Payment
 
@@ -77,29 +102,35 @@ Slot → Duration → Amount → Checkout → Payment
 * Activity Name
 * Date & Time
 * Player Count
+* Slot, Duration, Amount
 * Join Activity
 
 ---
 
 # AI
 
-* Create Activity
-* Suggest Clubs
-* Suggest Slots
-* Booking Help
+* Create Activity (Agentic AI chat)
+* Promoted Clubs
+
+### AI Activity Agent
+
+Step-by-step chat: Name → Players → Club → Date → Time → Notes → Confirm & Create
 
 ---
 
 # Notifications
 
 * Booking Updates
+* Booking Reminder
 * Activity Invites
+* Payment Updates
 
 ---
 
 # Profile
 
 * User Details
+* Booking History
 * Activity History
 * Logout
 
@@ -112,8 +143,6 @@ Cricket Turf Booking (Agentic AI)
 │     └── Check Auth State
 │
 ├── Authentication
-│     ├── Login
-│     ├── Signup
 │     └── Google Login
 │
 ├── Main App (Bottom Tabs)
@@ -122,63 +151,53 @@ Cricket Turf Booking (Agentic AI)
 ├── HOME TAB
 │     │
 │     ├── Home Screen
-│     │     ├── Club List
 │     │     ├── Search Clubs
 │     │     ├── Nearby Clubs
+│     │     ├── All Clubs (+ See All)
 │     │     └── Create Activity (+)
 │     │
+│     ├── All Clubs
+│     │
 │     ├── Club Details
-│     │     ├── Images
-│     │     ├── Timing
-│     │     ├── Facilities
 │     │     └── Tabs
 │     │           ├── Info
 │     │           ├── Booking
 │     │           └── Activities
 │     │
-│     └── Create Activity
-│           ├── Activity Name
-│           ├── Player Size
-│           ├── Select Club
-│           ├── Comment
-│           └── Create Activity
+│     ├── Create Activity
+│     │     ├── Activity Name
+│     │     ├── Player Size
+│     │     ├── Select Club
+│     │     └── Comment
+│     │
+│     ├── Select Club
+│     │
+│     ├── Activity Details
+│     │
+│     ├── Checkout Screen
+│     │
+│     ├── Payment Screen
+│     │     ├── UPI
+│     │     └── Pay Later at Club
+│     │
+│     └── Booking Confirmation
 │
 │
 ├── BOOKING TAB
 │     │
-│     ├── Slot Selection
+│     ├── Booking List
 │     │
-│     ├── Duration Selection
-│     │
-│     ├── Amount Selection
-│     │
-│     ├── Checkout Screen
-│     │     ├── Club Name
-│     │     ├── Slot Time
-│     │     ├── Duration
-│     │     ├── Player Size
-│     │     └── Amount
-│     │
-│     ├── Payment Screen
-│     │     ├── UPI
-│     │     ├── Card
-│     │     ├── Wallet
-│     │     └── Pay Later at Club
-│     │
-│     └── Booking Confirmation
-│           ├── Booking ID
-│           ├── Payment Success
-│           └── Booking Details
+│     └── Booking Details
 │
 │
 ├── AI TAB
 │     │
-│     └── AI Chat Screen
-│           ├── Create Activity
-│           ├── Suggest Clubs
-│           ├── Suggest Slots
-│           ├── Booking Help
-│           └── Smart Recommendations
+│     ├── AI Home
+│     │     ├── Create Activity (Agentic AI)
+│     │     └── Promoted Clubs
+│     │
+│     └── AI Activity Agent
+│           └── Chat: Name → Players → Club → Date → Time → Notes
 │
 │
 ├── NOTIFICATIONS TAB
@@ -192,8 +211,6 @@ Cricket Turf Booking (Agentic AI)
 └── PROFILE TAB
       │
       ├── User Details
-      ├── Edit Profile
       ├── Booking History
       ├── Activity History
-      ├── Saved Clubs
       └── Logout
