@@ -2,29 +2,32 @@ import { useEffect, useState } from 'react';
 import {
   ActivityIndicator,
   Image,
+  Pressable,
   ScrollView,
   StyleSheet,
   Text,
   View,
 } from 'react-native';
 import Icon from 'react-native-vector-icons/Ionicons';
+import { NativeStackScreenProps } from '@react-navigation/native-stack';
 import { SafeAreaView } from 'react-native-safe-area-context';
 
-import { fetchAiActions, fetchAiPromotions } from '../api/aiApi';
-import { AiAction, ClubPromotion } from '../types/ai';
+import { fetchAiPromotions } from '../api/aiApi';
+import { AIStackParamList } from '../navigation/types';
+import { ClubPromotion } from '../types/ai';
 import { colors } from '../theme/colors';
 
-export default function AIScreen() {
-  const [actions, setActions] = useState<AiAction[]>([]);
+type Props = NativeStackScreenProps<AIStackParamList, 'AIHome'>;
+
+const PREVIEW_STEPS = ['Name', 'Players', 'Club', 'Date', 'Time', 'Notes'];
+
+export default function AIScreen({ navigation }: Props) {
   const [promotions, setPromotions] = useState<ClubPromotion[]>([]);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    Promise.all([fetchAiActions(), fetchAiPromotions()])
-      .then(([actionData, promotionData]) => {
-        setActions(actionData);
-        setPromotions(promotionData);
-      })
+    fetchAiPromotions()
+      .then(setPromotions)
       .finally(() => setLoading(false));
   }, []);
 
@@ -40,18 +43,52 @@ export default function AIScreen() {
           <ActivityIndicator color={colors.blue} style={styles.loader} />
         ) : (
           <>
-            {actions.map((action) => (
-              <View key={action.id} style={styles.card}>
-                <View style={styles.iconWrap}>
-                  <Icon name={action.icon} size={24} color={colors.blue} />
+            <Pressable
+              style={styles.agentCard}
+              onPress={() => navigation.navigate('AICreateActivity')}
+            >
+              <View style={styles.agentCardTop}>
+                <View style={styles.agentIconWrap}>
+                  <Icon name="sparkles" size={26} color={colors.white} />
                 </View>
-                <View style={styles.cardBody}>
-                  <Text style={styles.cardTitle}>{action.title}</Text>
-                  <Text style={styles.cardDesc}>{action.description}</Text>
+                <View style={styles.agentCardHeader}>
+                  <Text style={styles.agentLabel}>Agentic AI</Text>
+                  <Text style={styles.agentTitle}>Create Activity</Text>
+                  <Text style={styles.agentDesc}>
+                    Chat with AI — it asks questions, you answer, and it creates your match.
+                  </Text>
                 </View>
-                <Icon name="chevron-forward" size={20} color={colors.textMuted} />
               </View>
-            ))}
+
+              <View style={styles.previewChat}>
+                <View style={styles.previewBubbleAssistant}>
+                  <Icon name="sparkles" size={12} color={colors.blue} />
+                  <Text style={styles.previewAssistantText}>
+                    What should we call your activity?
+                  </Text>
+                </View>
+                <View style={styles.previewBubbleUser}>
+                  <Text style={styles.previewUserText}>Sunday Gully T20</Text>
+                </View>
+                <View style={styles.previewBubbleAssistant}>
+                  <Icon name="sparkles" size={12} color={colors.blue} />
+                  <Text style={styles.previewAssistantText}>How many players?</Text>
+                </View>
+              </View>
+
+              <View style={styles.stepsRow}>
+                {PREVIEW_STEPS.map((step) => (
+                  <View key={step} style={styles.stepPill}>
+                    <Text style={styles.stepText}>{step}</Text>
+                  </View>
+                ))}
+              </View>
+
+              <View style={styles.startRow}>
+                <Text style={styles.startText}>Start AI conversation</Text>
+                <Icon name="arrow-forward-circle" size={28} color={colors.white} />
+              </View>
+            </Pressable>
 
             <Text style={styles.promoSectionTitle}>Promoted Clubs</Text>
             {promotions.map((promo) => (
@@ -87,28 +124,106 @@ const styles = StyleSheet.create({
   subtitle: { fontSize: 14, color: colors.textSecondary, marginTop: 4 },
   content: { paddingHorizontal: 20, paddingBottom: 24 },
   loader: { marginVertical: 32 },
-  card: {
-    flexDirection: 'row',
-    alignItems: 'center',
-    backgroundColor: colors.white,
-    borderRadius: 16,
-    padding: 16,
-    marginBottom: 12,
-    borderWidth: 1,
-    borderColor: colors.border,
-    gap: 12,
+  agentCard: {
+    backgroundColor: colors.navy,
+    borderRadius: 20,
+    padding: 18,
+    marginBottom: 8,
+    overflow: 'hidden',
   },
-  iconWrap: {
-    width: 44,
-    height: 44,
-    borderRadius: 12,
-    backgroundColor: '#EEF3FF',
+  agentCardTop: {
+    flexDirection: 'row',
+    gap: 14,
+    marginBottom: 16,
+  },
+  agentIconWrap: {
+    width: 52,
+    height: 52,
+    borderRadius: 16,
+    backgroundColor: 'rgba(255,255,255,0.12)',
     alignItems: 'center',
     justifyContent: 'center',
   },
-  cardBody: { flex: 1 },
-  cardTitle: { fontSize: 16, fontWeight: '700', color: colors.textPrimary, marginBottom: 4 },
-  cardDesc: { fontSize: 13, color: colors.textSecondary, lineHeight: 18 },
+  agentCardHeader: { flex: 1 },
+  agentLabel: {
+    fontSize: 11,
+    fontWeight: '700',
+    color: '#93C5FD',
+    letterSpacing: 0.8,
+    textTransform: 'uppercase',
+    marginBottom: 4,
+  },
+  agentTitle: {
+    fontSize: 20,
+    fontWeight: '800',
+    color: colors.white,
+    marginBottom: 6,
+  },
+  agentDesc: {
+    fontSize: 13,
+    color: 'rgba(255,255,255,0.75)',
+    lineHeight: 18,
+  },
+  previewChat: {
+    gap: 8,
+    marginBottom: 14,
+  },
+  previewBubbleAssistant: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    gap: 8,
+    alignSelf: 'flex-start',
+    maxWidth: '88%',
+    backgroundColor: 'rgba(255,255,255,0.12)',
+    paddingHorizontal: 12,
+    paddingVertical: 10,
+    borderRadius: 14,
+    borderBottomLeftRadius: 4,
+  },
+  previewAssistantText: {
+    flex: 1,
+    fontSize: 13,
+    color: 'rgba(255,255,255,0.9)',
+    lineHeight: 18,
+  },
+  previewBubbleUser: {
+    alignSelf: 'flex-end',
+    maxWidth: '70%',
+    backgroundColor: colors.blue,
+    paddingHorizontal: 12,
+    paddingVertical: 10,
+    borderRadius: 14,
+    borderBottomRightRadius: 4,
+  },
+  previewUserText: {
+    fontSize: 13,
+    color: colors.white,
+    fontWeight: '600',
+  },
+  stepsRow: {
+    flexDirection: 'row',
+    flexWrap: 'wrap',
+    gap: 6,
+    marginBottom: 16,
+  },
+  stepPill: {
+    paddingHorizontal: 10,
+    paddingVertical: 4,
+    borderRadius: 20,
+    backgroundColor: 'rgba(255,255,255,0.1)',
+    borderWidth: 1,
+    borderColor: 'rgba(255,255,255,0.15)',
+  },
+  stepText: { fontSize: 11, fontWeight: '600', color: 'rgba(255,255,255,0.85)' },
+  startRow: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'space-between',
+    paddingTop: 14,
+    borderTopWidth: 1,
+    borderTopColor: 'rgba(255,255,255,0.12)',
+  },
+  startText: { fontSize: 15, fontWeight: '700', color: colors.white },
   promoSectionTitle: {
     fontSize: 18,
     fontWeight: '700',
